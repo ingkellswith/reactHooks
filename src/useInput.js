@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./styles.css";
 
 function useInput(defaultValue, validator) {
   const [value, setValue] = useState(defaultValue);
