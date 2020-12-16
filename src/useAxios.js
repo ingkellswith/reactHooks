@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
-import "./styles.css";
+import React, { useState, useEffect } from "react";
 import defaultAxios from "axios";
 
 const useAxios = (opts, axiosInstance = defaultAxios) => {
@@ -33,7 +32,7 @@ const useAxios = (opts, axiosInstance = defaultAxios) => {
   return { ...state, refetch };
 };
 
-export default function App8() {
+export default function App() {
   const { loading, data, error, refetch } = useAxios({
     url:
       "https://api.openweathermap.org/data/2.5/weather?lat=37&lon=127&APPID=f0ca4cae769efdb95398b56f90b5ff12&units=metric",

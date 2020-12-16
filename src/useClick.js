@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./styles.css";
 
 const useClick = (onClick) => {
   if (typeof onClick !== "function") return;
@@ -17,12 +16,12 @@ const useClick = (onClick) => {
   return element;
 };
 
-export default App = () => {
+export default function App() {
   /* const potato = useRef();
   setTimeout(() => potato.current?.focus(), 5000);
   return (
     <div className="App">
-      <input ref={potato} placeholder="la" />//{potato}에는 useRef()에서 리턴된 값이 들어간다.
+      <input ref={potato} placeholder="la" />//ref={use}
     </div> */
   const sayHello = () => console.log("say hello");
   const title = useClick(sayHello);
@@ -31,4 +30,4 @@ export default App = () => {
       <h1 ref={title}>Hi</h1>
     </div>
   );
-};
+}

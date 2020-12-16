@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./styles.css";
 
 const useNetwork = (onChange) => {
-  const [status, setStatus] = useState(navigator.onLine);
+  const [status, setStatus] = useState(navigator.onLine); //navigator.onLine은 true or false반환
   const handleChange = () => {
     if (typeof onChange === "function") {
       onChange(navigator.onLine);

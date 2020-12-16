@@ -1,31 +1,31 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./styles.css";
 
-const useFadeIn = (duration = 1, delay = 0) => {
-  if (typeof duration !== "number" || typeof delay !== "number") {
+const useBeforeLeave = (onBefore) => {
+  if (typeof onBefore !== "function") {
     return;
   }
-  const element = useRef();
-  useEffect(() => {
-    if (element.current) {
-      const { current } = element;
-      //console.log(current);
-      current.style.transition = `opacity ${duration}s ease-in-out ${delay}s`;
-      current.style.opacity = 1;
+  const handle = (event) => {
+    console.log(event);
+    const { clientY } = event;
+    if (clientY <= 0) {
+      onBefore();
     }
+  };
+  useEffect(() => {
+    document.addEventListener("mouseleave", handle);
+    return () => document.removeEventListener("mouseleave", handle);
   }, []);
-  return { ref: element, style: { opacity: 0 } };
 };
 
-export default function App3() {
-  const fadeInH1 = useFadeIn(1, 2);
-  const fadeInP = useFadeIn(2, 3);
+export default function App() {
+  const begForLife = () => {
+    console.log("Pls dont leave");
+  };
+
+  useBeforeLeave(begForLife);
   return (
-    <div className="App3">
-      <h1 ref={fadeInH1.ref} style={{ opacity: 0 }}>
-        hello
-      </h1>
-      <p {...fadeInP}>lalalalala</p>
+    <div className="App">
+      <h1>Hello</h1>
     </div>
   );
 }

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./styles.css";
 
 const useTitle = (initialTitle) => {
   const [title, setTitle] = useState(initialTitle);
@@ -11,7 +10,7 @@ const useTitle = (initialTitle) => {
   return setTitle;
 };
 
-export default App = () => {
+export default function App() {
   const titleUpdater = useTitle("Loading...");
   setTimeout(() => titleUpdater("Home"), 5000);
   return (
@@ -20,4 +19,4 @@ export default App = () => {
       <h2>Start editing to see some magic happen!</h2>
     </div>
   );
-};
+}

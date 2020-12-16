@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./styles.css";
 
 const useFullscreen = (callback) => {
   const element = useRef();

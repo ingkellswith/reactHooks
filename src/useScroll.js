@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./styles.css";
 
 const useScroll = () => {
   const [state, setState] = useState({
@@ -17,7 +16,7 @@ const useScroll = () => {
   return state;
 };
 
-export default function App5() {
+export default function App() {
   const { y } = useScroll();
   return (
     <div className="App5" style={{ height: "1000vh" }}>

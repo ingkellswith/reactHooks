@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./styles.css";
 
 const useNotification = (title, options) => {
   if (!("Notification" in window)) {
@@ -21,14 +20,15 @@ const useNotification = (title, options) => {
   return fireNotif;
 };
 
-export default function App7() {
+export default function App() {
   const triggerNotif = useNotification("can i steal your heart?", {
     body: "I love kimchi don't you?",
   });
 
   return (
-    <div className="App7">
+    <div className="App">
       <button onClick={triggerNotif}>hi</button>
     </div>
   );
 }
+0;
